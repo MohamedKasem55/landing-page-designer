@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
  */
 /* import Button from 'react-bootstrap/Button';
  */
-import Test from "./test";
 import "./App.css";
 import Colors from "./colors";
 import {
