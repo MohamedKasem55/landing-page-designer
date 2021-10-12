@@ -60,7 +60,7 @@ export default function Home() {
           marginTop: "50px",
           padding: "30px",
           borderRadius: "50px 50px 0px 0px",
-                }}
+        }}
       >
         <Form.Group className="mb-3">
           <Form.Label style={{ textAlign: "left", fontWeight: "bolder" }}>
@@ -229,10 +229,9 @@ export default function Home() {
               })}
           </Row>
         </Form.Group>
-
       </Form>
       <div
-          style={{
+        style={{
           textAlign: "left",
           display: "flex",
           flexDirection: "column",
@@ -241,8 +240,9 @@ export default function Home() {
           marginRight: "20%",
           backgroundColor: "rgb(245,245,245)",
           borderRadius: "0px 0px 50px 50px",
-          paddingBottom:'20px'
-        }} >
+          paddingBottom: "20px",
+        }}
+      >
         <button
           style={{
             background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
@@ -263,7 +263,6 @@ export default function Home() {
         </button>
       </div>
 
-
       <Modal
         show={modalShow}
         onHide={() => {
@@ -274,32 +273,44 @@ export default function Home() {
           <Modal.Title>The Landing Page Preview</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {inputs.logo && (
-            <Image
-              roundedCircle={inputs.logoStyle === "Rounded"}
-              style={{
-                textAlign: "center",
-                width: "200px",
-                height: "200px",
-                objectFit: "cover",
-                marginBottom: "30px",
-              }}
-              src={URL.createObjectURL(inputs.logo)}
-            />
-          )}
-          <div
-            style={{
-              fontSize: "40px",
-              backgroundColor: inputs.titleBackground,
-              color: inputs.titleColor,
-              textAlign: "center",
-              fontWeight: "bold",
-              fontFamily: "cursive",
-            }}
-          >
-            {" "}
-            {inputs.title}{" "}
-          </div>
+          <Row style={{marginBottom:'20px'}} >
+            <Col>
+              {inputs.logo && (
+                <Image
+                  roundedCircle={inputs.logoStyle === "Rounded"}
+                  style={{
+                    textAlign: "center",
+                    width: "200px",
+                    height: "200px",
+                    objectFit: "cover",
+                    marginBottom: "30px",
+                  }}
+                  src={URL.createObjectURL(inputs.logo)}
+                />
+              )}
+            </Col>
+
+            <Col
+                style={{
+                  marginTop:'30px',
+                  verticalAlign:'middle',
+                  height:'70px',
+                  fontSize: "20px",
+                  backgroundColor: inputs.titleBackground,
+                  color: inputs.titleColor,
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontFamily: "cursive",
+                }}            
+            >
+              <div
+                  style={{marginTop:'13px',alignSelf:'center'}}
+              >
+                {" "}
+                {inputs.title}{" "}
+              </div>
+            </Col>
+          </Row>
 
           <Carousel>
             {inputs.carousel &&
